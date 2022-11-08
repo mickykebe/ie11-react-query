@@ -30,6 +30,9 @@ function Example() {
       <strong>👀 {data.subscribers_count}</strong>{' '}
       <strong>✨ {data.stargazers_count}</strong>{' '}
       <strong>🍴 {data.forks_count}</strong>
+      <button onClick={() => {
+        queryClient.invalidateQueries({ queryKey: ['repoData'] });
+      }}>Invalidate</button>
     </div>
   )
 }
